@@ -6,11 +6,19 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
-  imports: {
-    dirs: ['./stores'],
+  nitro: {
+    esbuild: {
+      options: {
+        target: "es2020",
+      },
+    },
   },
 
-  pinia: {
-    autoImports: ['defineStore', 'acceptHMRUpdate'],
-  },
+  // imports: {
+  //   dirs: ['./stores'],
+  // },
+
+  // pinia: {
+  //   autoImports: ['defineStore', 'acceptHMRUpdate'],
+  // },
 })
